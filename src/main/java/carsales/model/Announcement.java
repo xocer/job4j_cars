@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
@@ -17,12 +18,15 @@ public class Announcement {
 
     @ManyToOne(cascade = CascadeType.ALL)
     private User user;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Brand brand;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Model model;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Photo photo;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private LocalDateTime date;
 
     private boolean sold;
 }

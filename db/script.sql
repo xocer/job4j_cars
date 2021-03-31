@@ -31,5 +31,6 @@ create table announcements
     brand_id    int not null references brands (id),
     model_id    int not null references models (id),
     photo_id    int not null references photos (id),
-    sold      boolean default false
+    sold      boolean default false,
+    date timestamp not null
 );
